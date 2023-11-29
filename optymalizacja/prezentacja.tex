@@ -1,0 +1,189 @@
+\documentclass{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{booktabs}
+
+\usetheme{Madrid} % Wybierz motyw prezentacji
+
+\title{Optymalizacja – pojęcie i zastosowania}
+\author{Bernard Pokorski}
+\date{30.11.2023}
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Strona tytułowa
+\end{frame}
+
+\begin{frame}{Plan prezentacji}
+\tableofcontents % Spis treści
+\end{frame}
+
+\section{Definicje}
+
+\begin{frame}
+    \frametitle{Pomocnicze definicje}
+    \begin{block}{Ekstremum funkcji}
+        Nazywamy minimum lub maksimum funkcji.
+        \begin{itemize}
+            \item \textbf{Ekstremum lokalne} dotyczy pewnego otoczenia punktu
+            (przedziału otwartego)
+            \item \textbf{Ekstremum globalne} największa lub najmniejsza
+            wartość funkcji w całej jej dziedzinie.
+        \end{itemize}
+    \end{block}
+    \begin{block}{Pola}
+        \begin{itemize}
+            \item \textbf{Pole skalarne} przypisanie każdemu punktowi w przestrzeni fizycznej lub w przestrzeni
+            abstrakcyjnej pewnej wielkości skalarnej, czyli liczby.
+            \item \textbf{Pole wektorowe} funkcja, która każdemu punktowi przestrzeni przyporządkowuje pewną
+            wielkość wektorową.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Pomocnicze definicje}
+    \begin{block}{Gradient}
+    \textbf{Gradient  ($\nabla$)} To pole wektorowe wskazujące kierunek i szybkość wzrostu danego pola skalarnego w
+    określonym punkcie, gdzie moduł (długość) każdego wektora jest równy szybkości wzrostu pola
+    skalarnego w kierunku jego największej wartości.
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Co to jest optymalizacja?}
+    \begin{block}{Definicja}
+    Optymalizacja to proces znajdowania \textbf{najlepszego} rozwiązania spośród zestawu możliwych rozwiązań dla danego problemu. Może to obejmować minimalizację lub maksymalizację pewnej funkcji celu przy uwzględnieniu ograniczeń. \\
+    \textbf{Przykład:} Rozważmy problem minimalizacji kosztów transportu. Mając dane różne środki transportu i odległości między lokalizacjami, celem jest znalezienie najtańszego sposobu przewiezienia towarów z jednego punktu do drugiego.
+    \end{block}
+\end{frame}
+
+\section{Zastosowanie optymalizacji}
+\begin{frame}
+    \frametitle{Przykłady}
+    \begin{block}{Przykład 1}
+    \textbf{Zadanie liniowe z ograniczeniami} 
+        \begin{enumerate}
+            \item \textbf{Problem alokacji zasobów:} Jak zoptymalizować alokację budżetu na różne projekty przy określonych ograniczeniach finansowych?
+            \item \textbf{Planowanie produkcji:} Jak zoptymalizować produkcję różnych produktów w fabryce przy ograniczonych zasobach surowców i czasie pracy?
+            \item \textbf{Zrównoważony transport:} Jak zoptymalizować trasę dostaw towarów przy minimalnych kosztach transportu?
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Przykłady}
+    \begin{block}{Przykład 2}
+    \textbf{Zadanie kwadratowe z ograniczeniami} 
+        \begin{enumerate}
+            \item \textbf{Projektowanie struktury:} Jak zoptymalizować kształt mostu, tak aby zużycie materiałów było minimalne przy zachowaniu określonych kryteriów wytrzymałościowych?
+            \item \textbf{Problemy regresji:} W przypadku analizy danych, jak znaleźć krzywą dopasowującą się najlepiej do punktów danych?
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Przykłady}
+    \begin{block}{Przykład 3}
+    \textbf{Zadanie nieliniowe z ograniczeniami} 
+        \begin{enumerate}
+            \item \textbf{Optymalizacja marketingowa:} Jak zoptymalizować strategię marketingową, uwzględniając różne czynniki wpływające na rynek?
+            \item \textbf{Projektowanie systemów energetycznych:} Jak zoptymalizować układ energetyczny w mieście, biorąc pod uwagę różne źródła energii, popyt i ograniczenia?
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Przykłady}
+    \begin{block}{Przykład 4}
+    \textbf{Zadanie liniowe całkowitoliczbowe z ograniczeniami} 
+        \begin{enumerate}
+            \item \textbf{Problem plecakowy:} Jak wybrać zestaw przedmiotów o różnych wagach i wartościach, aby ich suma w plecaku nie przekroczyła określonej wartości?
+            \item \textbf{Planowanie tras:} Jak zoptymalizować trasę dostawy w mieście, biorąc pod uwagę ograniczenia czasowe i liczbowe pojazdów?
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Przykłady}
+    \begin{block}{Przykład 5}
+    \textbf{Zadanie nieliniowe bez ograniczeń} 
+        \begin{enumerate}
+            \item \textbf{Funkcje celu w analizie numerycznej:} Jak znaleźć maksimum lub minimum funkcji bez jakichkolwiek ograniczeń, co ma zastosowanie w naukach ścisłych?
+            \item \textbf{Optymalizacja procesów przetwarzania danych:} Jak zoptymalizować algorytmy przetwarzania danych w celu zmaksymalizowania wydajności?
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\section{Podejścia w rozwiązywaniu problemów}
+\begin{frame}
+    \frametitle{Podejście zachłanne a ewolucyjne/dynamiczne}
+    \begin{block}{Podejście zachłanne}
+        To podejście polega na podejmowaniu lokalnie optymalnych decyzji na każdym kroku, w nadziei osiągnięcia globalnej optymalizacji. Algorytm podejmuje najlepsze dostępne rozwiązanie w danym momencie, nie analizując całego zbioru możliwości. Przykładem jest algorytm Dijkstry do znajdowania najkrótszej ścieżki w grafie.
+    \end{block}
+    \begin{block}{Podejście dynamiczne/ewolucyjne}
+        Metoda dynamiczna polega na rozwiązywaniu problemów przez podział na mniejsze podproblemy, rozwiązywanie ich i wykorzystywanie uzyskanych wyników do rozwiązania głównego problemu.
+    \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Podejście zachłanne a ewolucyjne/dynamiczne}
+    \textbf{Przykład:} \\
+    Problem plecakowy to klasyczny problem optymalizacyjny, gdzie próbujemy wybrać zestaw przedmiotów o różnych wagach i wartościach, aby ich suma wag nie przekroczyła określonej pojemności plecaka, a suma wartości była jak największa.
+    \begin{table}[htbp]
+        \centering
+        \caption{Tabela przedmiotów, wag i wartości}
+        \begin{tabular}{ccc}
+            \toprule
+            Przedmiot & Waga & Wartość \\
+            \midrule
+            A & 5 & 10 \\
+            B & 8 & 14 \\
+            C & 3 & 7 \\
+            D & 4 & 8 \\
+            \bottomrule
+        \end{tabular}
+        \label{tab:tabela_przedmiotow}
+    \end{table}
+\end{frame}
+\begin{frame}
+    \frametitle{Podejście zachłanne a dynamiczne}
+    \begin{block}{Podejście zachłanne}
+        Rozwiązanie zachłanne mogłoby polegać na wyborze przedmiotu o największym stosunku wartości do wagi. W tym przypadku, można zastosować algorytm, który wybiera przedmioty według wartości na wagę, co prowadzi do wyboru przedmiotu A (10 wartości przy wadze 5) jako pierwszego.\\
+Załóżmy, że zaczynamy z przedmiotem A o wartości 10 i wadze 5. Następnie wybieramy kolejny przedmiot o najwyższym stosunku wartości do wagi spośród pozostałych, co jest algorytmem zachłannym. W tym przypadku, kolejnym wyborem byłby przedmiot C o wartości 7 i wadze 3. Całkowita wartość wynosi 17, a waga 8, co mieści się w pojemności plecaka.
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Podejście zachłanne a dynamiczne}
+    \begin{block}{Podejście dynamiczne}
+        Algorytm programowania dynamicznego do rozwiązania problemu plecakowego opiera się na podejściu bottom-up, rozwiązując najpierw mniejsze podproblemy i wykorzystując je do rozwiązania całego problemu.\\
+        W przypadku problemu plecakowego, algorytm dynamiczny tworzy tablicę, gdzie komórki przechowują maksymalną wartość, jaką można uzyskać dla określonej pojemności plecaka i dla różnych kombinacji przedmiotów. Wartości te są obliczane iteracyjnie, wykorzystując wcześniej obliczone wartości dla mniejszych pojemności plecaka i mniejszych zbiorów przedmiotów.
+    \end{block}
+\end{frame}
+
+\section{Alogrytmy optymalizacyjne}
+\begin{frame}
+    \frametitle{Algorytmy optymalizacyjne}
+    \begin{block}{Algorytmy ewolucyjne}
+        \textbf{Algorytm genetyczny}
+        Inspirowane procesami ewolucji biologicznej, wykorzystują selekcję naturalną, krzyżowanie i mutacje, aby generować nowe rozwiązania.
+    \end{block}
+    \begin{block}{Algorytm metaheurystyczne}
+        \textbf{Algorytm roju (PSO)}
+        Inspirujące się zachowaniami roju zwierząt do znalezienia optymalnego rozwiązania poprzez interakcje między "cząstkami".
+    \end{block}
+    \begin{alertblock}{Sieci neuronowe}
+        \textbf{Sieci neuronowe nie są algorytmami optymalizacyjnym!} \\
+        Podczas procesu uczenia sieci neuronowych algorytm optymalizacji jest używany do dostosowania wag połączeń między neuronami w sieci, tak aby zminimalizować funkcję kosztu
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Algorytmy optymalizacyjne w sieciach neuronowych}
+    \begin{block}{Algorytmy gradientowe}
+        Gradient to wektor zawierający pochodne cząstkowe funkcji celu względem każdego z parametrów modelu. 
+        Ogólna idea algorytmów gradientowych opiera się na iteracyjnym aktualizowaniu parametrów modelu w kierunku przeciwnym do gradientu funkcji celu. 
+    \end{block}
+\end{frame}
+\end{document}
