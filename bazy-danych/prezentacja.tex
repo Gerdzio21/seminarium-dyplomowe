@@ -47,36 +47,54 @@ Cel ćwiczenia:
 
 \begin{frame}
     \frametitle{Model koncepcyjny}
-   To co przed chwilą zrobiliśmy nazywa się \textbf{Analizą biznesową}
+   To co przed chwilą zrobiliśmy nazywa się \textbf{Analizą biznesową}. \\
    Przy wykorzystaniu \textbf{Diagramu Związków Encji (ERD)} spróbujemy przedstawić naszą koncepcję 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Model koncepcyjny}
+    \begin{figure}
+        \includegraphics[width=1\textwidth]{erd.png}
+        \caption{Przykładowy diagram związków encji}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
     \frametitle{Model logiczny}
     Skoro mamy już konecpcyjny model bazy danych czas pomyśleć\\ 
-    \textit{jak moglibyśmy przedstawić to wszystko przy pomocy tabel}\\
-    W modelu logicznym mamy konkretne tabele i relacje między nimi.
+    \textit{jak moglibyśmy przełożyć na konkretny silnik bazodanowy}\\
+    \textbf{W zależności od typu bazy danych model logiczny może być różny!} 
+    Na przykład dla baz relacyjnych np. MySQL tworzone są klucze podstawowe i obce, a związki wiele do wielu są przedstawiane jako tabele.
+    \begin{block}{Przykładowe silniki bazodanowe}
+        \begin{enumerate}
+        \item Silniki relacyjnych baz danych (RDBMS): \textit{MySQL, PostgreSQL}
+        \item Silniki NoSQL: \textit{MongoDB, Cassandra, Redis}
+        \item Inne silniki specjalizowane: \textit{Elasticsearch, Neo4j}  
+        \end{enumerate}
+    \end{block}
 \end{frame}
 
 \begin{frame}
     \frametitle{Model fizyczny}
     Pozostaje pytanie jak te dane w efektywny sposób przechowywać?\\
-    Do tego celu do naszej dyspozycji są dostarczane:
-    \begin{enumerate}
-    \item Silniki relacyjnych baz danych (RDBMS): \textit{MySQL, PostgreSQL}
-    \item Silniki NoSQL: \textit{MongoDB, Cassandra, Redis}
-    \item Inne silniki specjalizowane: \textit{Elasticsearch, Neo4j}
-    \end{enumerate}
+    Na tym etapie postają elementu potrzebne do efektywnego zarządzania bazą danych.\\
+    \begin{block}{Przykładowo}
+    W relacyjnych bazach danych dodawane są indeksy i określane konkretne parametry pól np. VARCHAR(2137), TEXT, INT
+    \end{block}
+
 \end{frame}
 
 \begin{frame}
     \frametitle{Modele bazy danych}
     \begin{block}{Model koncepcyjny}
-        Skupia się na ogólnych potrzebach biznesowych i jest abstrakcyjny.
+        Skupia się na ogólnych potrzebach biznesowych i jest abstrakcyjny. \\
+        To znaczy, że nie zawiera \textbf{żadnych} informacji związanych z implementacją. \\ 
+        \textbf{\textcolor{red}{Przedstawia jedynie encje i związki między nimi}}
     \end{block}
     \begin{block}{Model logiczny}
         Przetwarza model koncepcyjny na poziomie bardziej technicznym, używając schematu danych.
-    \end{block}
+        W zależności od wybranej bazy (a w szczególności typu) danych modele logiczne będą się od siebie rózniły.
+    \end{block} 
     \begin{block}{Model fizyczny}
         Definiuje, w jaki sposób dane są przechowywane na poziomie fizycznym, uwzględniając specyfikę bazy danych.
     \end{block}
